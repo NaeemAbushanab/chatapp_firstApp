@@ -1,3 +1,4 @@
+import 'package:chatapp/components/avatar.dart';
 import 'package:chatapp/constant.dart';
 import 'package:flutter/material.dart';
 
@@ -39,17 +40,23 @@ class _ChatAppState extends State<ChatApp> {
       body: ListView.separated(
         itemBuilder: (BuildContext context, int index) {
           return Container(
-            color: Colors.amber,
-            height: 100,
+            child: Row(children: [
+              Avatar(
+                photo: "assets/avatar/avatar.png",
+                isOnline: true,
+              ),
+
+            ]),
           );
         },
         itemCount: 10,
         padding: EdgeInsets.all(10),
         separatorBuilder: (BuildContext context, int index) {
-          return SizedBox(height: 10,width: 10,);
+          return SizedBox(
+            height: 10,
+            width: 10,
+          );
         },
-
-
       ),
     );
   }
